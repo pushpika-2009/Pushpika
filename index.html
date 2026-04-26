@@ -1,44 +1,32 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pushpika | Portfolio</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         :root {
-            --black: #000000;
-            --deep-black: #050505;
-            --dark-bg: #0a0a0a;
-            --card-bg: #111111;
-            --border: #1e1e1e;
-            --border-light: #2a2a2a;
-            --white: #ffffff;
-            --off-white: #e0e0e0;
-            --gray: #888888;
-            --gray-light: #aaaaaa;
-            --electric-blue: #0066ff;
-            --electric-blue-light: #3388ff;
-            --electric-blue-glow: #0066ff66;
-            --gradient-blue: linear-gradient(135deg, #0066ff, #00aaff);
-            --shadow-blue: 0 0 30px rgba(0, 102, 255, 0.3);
+            --black: #000000; --deep-black: #050505; --dark-bg: #0a0a0a;
+            --card-bg: #111111; --border: #1e1e1e; --border-light: #2a2a2a;
+            --white: #ffffff; --off-white: #e0e0e0; --gray: #888888; --gray-light: #aaaaaa;
+            --electric-blue: #0066ff; --electric-blue-light: #3388ff;
+            --electric-blue-glow: #0066ff66; --gradient-blue: linear-gradient(135deg, #0066ff, #00aaff);
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; font-size: 16px; }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif; background-color: var(--black);
+            color: var(--white); line-height: 1.6; overflow-x: hidden;
         }
         .bg-pattern {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -47,7 +35,7 @@
             background-size: 40px 40px;
         }
 
-        /* Navbar */
+        /* navbar */
         .navbar {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
             padding: 1.2rem 2rem; transition: var(--transition); background: transparent;
@@ -66,10 +54,9 @@
         }
         .nav-logo span { color: var(--electric-blue); font-weight: 800; }
         .nav-logo .dot {
-            display: inline-block; width: 8px; height: 8px;
-            background: var(--electric-blue); border-radius: 50%;
-            margin-left: 2px; animation: pulse-dot 2s infinite;
-            box-shadow: var(--shadow-blue);
+            display: inline-block; width: 8px; height: 8px; background: var(--electric-blue);
+            border-radius: 50%; margin-left: 2px; animation: pulse-dot 2s infinite;
+            box-shadow: 0 0 30px rgba(0,102,255,0.3);
         }
         @keyframes pulse-dot {
             0%,100% { box-shadow: 0 0 0 0 rgba(0,102,255,0.7); }
@@ -82,7 +69,7 @@
         }
         .nav-links a::after {
             content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
-            background: var(--electric-blue); transition: var(--transition); border-radius: 2px;
+            background: var(--electric-blue); transition: var(--transition);
         }
         .nav-links a:hover { color: var(--white); }
         .nav-links a:hover::after { width: 100%; }
@@ -96,7 +83,7 @@
         .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1001; }
         .hamburger span { width: 28px; height: 2.5px; background: var(--white); border-radius: 4px; transition: var(--transition); }
 
-        /* Hero */
+        /* hero */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             position: relative; padding: 2rem; z-index: 1; overflow: hidden;
@@ -112,16 +99,15 @@
             33% { transform: translate(40px,-30px) scale(1.1); }
             66% { transform: translate(-20px,20px) scale(0.9); }
         }
-        .hero-content { text-align: center; max-width: 800px; position: relative; z-index: 2; }
+        .hero-content { text-align: center; max-width: 800px; }
         .hero-badge {
             display: inline-block; padding: 0.5rem 1.3rem; border: 1px solid var(--border-light);
-            border-radius: 50px; font-size: 0.85rem; color: var(--gray-light); letter-spacing: 1px;
-            margin-bottom: 2rem;
+            border-radius: 50px; font-size: 0.85rem; color: var(--gray-light); margin-bottom: 2rem;
         }
         .hero-badge i { color: var(--electric-blue); margin-right: 6px; }
         .hero-title {
-            font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800;
-            line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.5rem;
         }
         .hero-title .highlight {
             background: var(--gradient-blue); -webkit-background-clip: text;
@@ -138,37 +124,30 @@
         .btn-primary:hover { background: var(--electric-blue-light); transform: translateY(-2px); }
         .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--border-light); }
         .btn-outline:hover { border-color: var(--electric-blue); color: var(--electric-blue-light); }
-        .btn-download {
-            background: #00cc66; color: #fff; margin: 0.5rem 0;
-        }
-        .btn-download:hover { background: #00dd77; }
 
         section { padding: 5rem 2rem; position: relative; z-index: 1; }
         .section-container { max-width: 1200px; margin: 0 auto; }
-        .section-label {
-            display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
-            color: var(--electric-blue-light); text-transform: uppercase; margin-bottom: 1rem;
-        }
         .section-title {
             font-family: 'Poppins', sans-serif; font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700; letter-spacing: -1px; margin-bottom: 1rem;
+            font-weight: 700; letter-spacing: -1px; margin-bottom: 2rem; text-align: center;
         }
         .section-title .accent { color: var(--electric-blue-light); }
-        .text-center { text-align: center; }
 
+        /* about */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-        .about-image-wrapper img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 20px; border: 1px solid var(--border); }
+        .about-image-wrapper img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 20px; }
         .about-image-placeholder {
             width: 100%; aspect-ratio: 1; border-radius: 20px; background: var(--card-bg);
             display: flex; align-items: center; justify-content: center; font-size: 6rem; color: var(--electric-blue);
         }
-        .about-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .about-stats { display: flex; gap: 2rem; margin-top: 1.5rem; }
         .stat-number { font-family: 'Poppins', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--electric-blue-light); }
 
+        /* projects */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
         .project-card {
             background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
-            overflow: hidden; transition: var(--transition); cursor: pointer;
+            overflow: hidden; transition: var(--transition);
         }
         .project-card:hover { transform: translateY(-8px); border-color: var(--electric-blue); }
         .project-card video, .project-card img { width: 100%; height: 200px; object-fit: cover; }
@@ -178,24 +157,26 @@
             border-radius: 50px; background: rgba(0,102,255,0.15); color: var(--electric-blue-light);
         }
 
+        /* photography */
         .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; }
         .photo-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
         .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
         .photo-item:hover img { transform: scale(1.06); }
         .photo-overlay {
             position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 50%);
-            opacity: 0; display: flex; align-items: flex-end; padding: 1.2rem;
+            opacity: 0; display: flex; align-items: flex-end; padding: 1.2rem; transition: 0.3s;
         }
         .photo-item:hover .photo-overlay { opacity: 1; }
 
+        /* skills */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.5rem; }
         .skill-card {
             background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
-            padding: 2rem 1rem; text-align: center; transition: var(--transition);
+            padding: 2rem 1rem; text-align: center;
         }
-        .skill-card:hover { border-color: var(--electric-blue); }
         .skill-icon { font-size: 2.5rem; color: var(--electric-blue-light); margin-bottom: 1rem; }
 
+        /* contact */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
         .contact-form input, .contact-form textarea {
             width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--border);
@@ -206,11 +187,11 @@
             background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1rem;
         }
         .contact-info-icon {
-            width: 50px; height: 50px; border-radius: 50%;
-            background: rgba(0,102,255,0.15); display: flex; align-items: center;
-            justify-content: center; font-size: 1.3rem; color: var(--electric-blue-light);
+            width: 50px; height: 50px; border-radius: 50%; background: rgba(0,102,255,0.15);
+            display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--electric-blue-light);
         }
 
+        /* footer */
         footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); }
         .footer-links a { color: var(--gray); margin: 0 1rem; text-decoration: none; }
         .footer-social a {
@@ -220,41 +201,26 @@
         }
         .footer-social a:hover { border-color: var(--electric-blue); color: var(--electric-blue-light); }
 
-        /* Admin Panel */
-        .admin-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
-            z-index: 9999; display: flex; align-items: center; justify-content: center;
-            opacity: 0; pointer-events: none; transition: 0.3s;
+        /* lightbox */
+        .lightbox {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999;
+            display: none; align-items: center; justify-content: center;
         }
-        .admin-overlay.active { opacity: 1; pointer-events: all; }
-        .admin-panel {
-            background: #111; border: 1px solid #2a2a2a; border-radius: 20px;
-            padding: 2rem; width: 95%; max-width: 900px; max-height: 90vh; overflow-y: auto;
-            position: relative;
-        }
-        .admin-close {
-            position: absolute; top: 1rem; right: 1rem; font-size: 1.8rem;
-            cursor: pointer; color: #aaa; background: none; border: none;
-        }
-        .admin-card {
-            background: #0a0a0a; border: 1px solid #1e1e1e; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;
-        }
-        .admin-card input, .admin-card textarea, .admin-card select {
-            width: 100%; padding: 0.7rem; background: #111; border: 1px solid #2a2a2a;
-            border-radius: 8px; color: #fff; margin-bottom: 0.5rem; outline: none;
-        }
-        .admin-card label { display: block; margin-bottom: 0.3rem; color: #ccc; }
-        .btn-sm {
-            padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
-            background: var(--electric-blue); color: #fff; border: none; cursor: pointer;
-        }
-        .admin-list li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #1a1a1a; }
-        .delete-btn { background: transparent; border: 1px solid #f44; color: #f44; border-radius: 50px; padding: 0.2rem 0.8rem; cursor: pointer; }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
+        .lightbox-close { position: absolute; top: 2rem; right: 2rem; font-size: 2rem; color: #fff; cursor: pointer; }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 2.5rem; color: #fff; cursor: pointer; }
+        .lightbox-prev { left: 2rem; }
+        .lightbox-next { right: 2rem; }
 
         @media (max-width: 768px) {
             .hamburger { display: flex; }
-            .nav-links { position: fixed; top: 0; right: -100%; width: 70%; max-width: 280px; height: 100vh; background: rgba(0,0,0,0.95); flex-direction: column; padding: 6rem 2rem; transition: var(--transition); }
-            .nav-links.active { right: 0; }
+            .nav-links {
+                display: none; flex-direction: column; position: absolute; top: 100%;
+                right: 0; background: rgba(0,0,0,0.95); padding: 1.5rem; border-radius: 10px;
+                border: 1px solid #2a2a2a; min-width: 200px;
+            }
+            .nav-links.active { display: flex; }
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
         }
@@ -263,15 +229,15 @@
 <body>
     <div class="bg-pattern"></div>
 
-    <!-- Navbar -->
+    <!-- ========== NAVIGATION ========== -->
     <nav class="navbar" id="navbar">
         <div class="navbar-inner">
             <a href="#home" class="nav-logo">Push<span>pika</span><span class="dot"></span></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#software"><i class="fas fa-code"></i> Software &amp; Web</a></li>
-                <li><a href="#iot"><i class="fas fa-microchip"></i> IOT &amp; Robotics</a></li>
+                <li><a href="#software"><i class="fas fa-code"></i> Software & Web</a></li>
+                <li><a href="#iot"><i class="fas fa-microchip"></i> IOT & Robotics</a></li>
                 <li><a href="#photography"><i class="fas fa-camera"></i> Photography</a></li>
                 <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
                 <li><a href="#contact" class="nav-cta"><i class="fas fa-paper-plane"></i> Contact</a></li>
@@ -282,698 +248,344 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- ========== HERO ========== -->
     <section class="hero" id="home">
         <div class="hero-glow"></div><div class="hero-glow-2"></div>
-        <div class="hero-content" id="heroContent">
-                    <div class="hero-badge"><i class="fas fa-bolt"></i> Creative Developer &amp; Photographer</div>
-                    <h1 class="hero-title">I'm <span class="highlight">Pushpika</span><br>Building Digital<br>Experiences</h1>
-                    <p class="hero-subtitle">Software, IOT, and photography — crafting digital experiences.</p>
-                    <div class="hero-buttons">
-                        <a href="#software" class="btn btn-primary"><i class="fas fa-code"></i> Software &amp; Web</a>
-                        <a href="#iot" class="btn btn-outline"><i class="fas fa-microchip"></i> IOT &amp; Robotics</a>
-                    </div></div>
+        <div class="hero-content">
+            <!-- [EDIT HERE] Change hero badge, title, subtitle -->
+            <div class="hero-badge"><i class="fas fa-bolt"></i> Creative Developer & Photographer</div>
+            <h1 class="hero-title">I'm <span class="highlight">Pushpika</span><br>Building Digital<br>Experiences</h1>
+            <p class="hero-subtitle">Software, IOT, and photography — crafting digital experiences.</p>
+            <div class="hero-buttons">
+                <a href="#software" class="btn btn-primary"><i class="fas fa-code"></i> Software & Web</a>
+                <a href="#iot" class="btn btn-outline"><i class="fas fa-microchip"></i> IOT & Robotics</a>
+            </div>
+        </div>
     </section>
 
-    <!-- About -->
-    <section id="about"><div class="section-container about-grid" id="aboutContainer">
-                    <div class="about-image-wrapper"><img src="image folder/pushpika.jpg" onerror="this.parentElement.innerHTML='&lt;div class=\'about-image-placeholder\'&gt;&lt;i class=\'fas fa-user-astronaut\'&gt;&lt;/i&gt;&lt;/div&gt;'"></div>
-                    <div class="about-text">
-                        <span class="section-label">About Me</span>
-                        <h3>Passionate creator with an eye for <span class="accent">detail</span></h3>
-                        <p>Hey! I'm Pushpika — a multi-talented creator who loves building software, robotics projects, and capturing the world through my lens.</p>
-                        <p>I believe in clean code, innovative hardware, and beautiful design.</p>
-                        <div class="about-stats">
-                            <div class="stat-item"><div class="stat-number">1+</div><div class="stat-label">Projects</div></div>
-                            <div class="stat-item"><div class="stat-number">1+</div><div class="stat-label">Photos</div></div>
-                        </div>
-                    </div></div></section>
+    <!-- ========== ABOUT ========== -->
+    <section id="about">
+        <div class="section-container about-grid">
+            <div class="about-image-wrapper">
+                <!--
+                    [EDIT HERE] About image – replace with your own path.
+                    e.g., <img src="images/about.jpg" alt="About me">
+                -->
+                <div class="about-image-placeholder"><i class="fas fa-user-astronaut"></i></div>
+            </div>
+            <div class="about-text">
+                <span class="section-label">About Me</span>
+                <h3>Passionate creator with an eye for <span class="accent">detail</span></h3>
+                <!-- [EDIT HERE] Change about paragraphs -->
+                <p>Hey! I'm Pushpika — a multi‑talented creator who loves building software, robotics projects, and capturing the world through my lens.</p>
+                <p>I believe in clean code, innovative hardware, and beautiful design.</p>
+                <div class="about-stats">
+                    <div class="stat-item"><div class="stat-number" id="statProjects">0</div><div class="stat-label">Projects</div></div>
+                    <div class="stat-item"><div class="stat-number" id="statPhotos">0</div><div class="stat-label">Photos</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Software & Web Sites -->
+    <!-- ========== SOFTWARE & WEB ========== -->
     <section id="software">
         <div class="section-container">
-            <h2 class="section-title text-center"><i class="fas fa-laptop-code"></i> Software &amp; <span class="accent">Web Sites</span></h2>
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> Software & <span class="accent">Web Sites</span></h2>
             <div class="projects-grid" id="softwareGrid"></div>
         </div>
     </section>
 
-    <!-- IOT & Robotics -->
+    <!-- ========== IOT & ROBOTICS ========== -->
     <section id="iot">
         <div class="section-container">
-            <h2 class="section-title text-center"><i class="fas fa-robot"></i> IOT &amp; <span class="accent">Robotics</span></h2>
-            <div class="projects-grid" id="iotGrid">
-                    <div class="project-card">
-                        <video src="videos/demo.mp4" controls=""></video>
-                        <div class="project-card-body">
-                            <span class="project-card-tag">IOT</span>
-                            <h3>Smart Home System</h3>
-                            <p>Home automation using ESP32 and MQTT.</p>
-                        </div>
-                    </div></div>
+            <h2 class="section-title"><i class="fas fa-robot"></i> IOT & <span class="accent">Robotics</span></h2>
+            <div class="projects-grid" id="iotGrid"></div>
         </div>
     </section>
 
-    <!-- Photography -->
+    <!-- ========== PHOTOGRAPHY ========== -->
     <section id="photography">
         <div class="section-container">
-            <h2 class="section-title text-center"><i class="fas fa-images"></i> Captured <span class="accent">Moments</span></h2>
-            <div class="photo-grid" id="photoGrid">
-                    <div class="photo-item" data-index="0">
-                        <img src="image folder/pushpika.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=No+Image'">
-                        <div class="photo-overlay"><span>me</span></div>
-                    </div></div>
+            <h2 class="section-title"><i class="fas fa-images"></i> Captured <span class="accent">Moments</span></h2>
+            <div class="photo-grid" id="photoGrid"></div>
         </div>
     </section>
 
-    <!-- Skills -->
+    <!-- ========== SKILLS ========== -->
     <section id="skills">
         <div class="section-container">
-            <h2 class="section-title text-center"><i class="fas fa-puzzle-piece"></i> Skills &amp; <span class="accent">Talents</span></h2>
-            <div class="skills-grid" id="skillsGrid">
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-code"></i></div>
-                        <div class="skill-name">Web Development</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <div class="skill-name">App Development</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                        <div class="skill-name">Robotics</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-microchip"></i></div>
-                        <div class="skill-name">IOT</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-camera-retro"></i></div>
-                        <div class="skill-name">Photography</div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
-                        <div class="skill-name">UI/UX Design</div>
-                    </div></div>
+            <h2 class="section-title"><i class="fas fa-puzzle-piece"></i> Skills & <span class="accent">Talents</span></h2>
+            <div class="skills-grid" id="skillsGrid"></div>
         </div>
     </section>
 
-    <!-- Custom Sections -->
-    <section id="custom-sections"><div class="section-container" id="customSectionsContainer"></div></section>
+    <!-- ========== CONTACT ========== -->
+    <section id="contact">
+        <div class="section-container contact-grid">
+            <div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
+                <p id="formStatus" style="margin-top:1rem;"></p>
+            </div>
+            <div>
+                <!-- [EDIT HERE] Your contact info -->
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                    <div><strong>Email</strong><br>pushpika@example.com</div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div><strong>Location</strong><br>Available Worldwide</div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                    <div><strong>Availability</strong><br>Freelance & Open to Work</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Contact -->
-    <section id="contact"><div class="section-container contact-grid" id="contactContainer">
-                    <div>
-                        <form class="contact-form" id="contactForm">
-                            <input type="text" name="name" placeholder="Your Name" required="">
-                            <input type="email" name="email" placeholder="Your Email" required="">
-                            <textarea name="message" placeholder="Your Message" required=""></textarea>
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-                        </form>
-                        <div id="formStatus" style="display:none;margin-top:1rem;"></div>
-                    </div>
-                    <div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
-                            <div><strong>Email</strong><br>eapushpika@gmail.com.comgggggg</div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div><strong>Location</strong><br>Available Worldwide</div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
-                            <div><strong>Availability</strong><br>Freelance &amp; Open to Work</div>
-                        </div>
-                    </div></div></section>
-
-    <!-- Footer -->
+    <!-- ========== FOOTER ========== -->
     <footer>
         <div class="footer-links">
             <a href="#home">Home</a><a href="#about">About</a><a href="#software">Software</a>
             <a href="#iot">IOT</a><a href="#photography">Photos</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
         </div>
-        <div class="footer-social" id="footerSocial">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
-        <p>© <span id="footerYear">2026</span> Pushpika. All rights reserved.</p>
-        <span class="footer-admin-link" id="adminTrigger" style="color:#333;font-size:0.7rem;cursor:pointer;">● Admin Panel</span>
+        <div class="footer-social">
+            <!-- [EDIT HERE] Change social media links -->
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; <span id="footerYear"></span> Pushpika. All rights reserved.</p>
     </footer>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9998;display:none;align-items:center;justify-content:center;">
-        <span style="position:absolute;top:2rem;right:2rem;font-size:2rem;color:#fff;cursor:pointer;" id="lightboxClose">×</span>
-        <span style="position:absolute;left:2rem;font-size:3rem;color:#fff;cursor:pointer;" id="lightboxPrev"><i class="fas fa-chevron-left"></i></span>
-        <img src="" id="lightboxImg" style="max-width:90vw;max-height:80vh;border-radius:8px;">
-        <span style="position:absolute;right:2rem;font-size:3rem;color:#fff;cursor:pointer;" id="lightboxNext"><i class="fas fa-chevron-right"></i></span>
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <span class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></span>
+        <img src="" alt="Lightbox" id="lightboxImg">
+        <span class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></span>
     </div>
 
-    <!-- Admin Overlay -->
-    <div class="admin-overlay active" id="adminOverlay"><div class="admin-panel" id="adminPanel">
-                        <button class="admin-close"><i class="fas fa-times"></i></button>
-                        <button id="logoutBtn" style="position:absolute;top:1rem;right:4rem;background:none;border:1px solid #2a2a2a;color:#aaa;padding:0.3rem 1rem;border-radius:20px;cursor:pointer;">Logout</button>
-                        <h2><i class="fas fa-sliders-h"></i> Manage Your Site</h2>
-                        <button id="downloadBtn" class="btn btn-download"><i class="fas fa-download"></i> Download Updated Site</button>
-                        <p style="font-size:0.8rem;color:#888;margin-top:0.5rem;">After editing, click this button and replace your old index.html on GitHub.</p>
-                        <div class="admin-cards">
-                            <div class="admin-card">
-                    <h3><i class="fas fa-user"></i> Personal Info</h3>
-                    <label>Name</label><input id="inpName" value="Pushpika">
-                    <label>Hero Badge</label><input id="inpBadge" value="Creative Developer &amp; Photographer">
-                    <label>Hero Subtitle</label><input id="inpSubtitle" value="Software, IOT, and photography — crafting digital experiences.">
-                    <label>About Text 1</label><textarea id="inpAbout1">Hey! I'm Pushpika — a multi-talented creator who loves building software, robotics projects, and capturing the world through my lens.</textarea>
-                    <label>About Text 2</label><textarea id="inpAbout2">I believe in clean code, innovative hardware, and beautiful design.</textarea>
-                    <label>About Image (URL)</label><input id="inpAboutImage" value="image folder/pushpika.jpg">
-                    <label>Email</label><input id="inpEmail" value="eapushpika@gmail.com.comgggggg">
-                    <label>Location</label><input id="inpLocation" value="Available Worldwide">
-                    <label>Availability</label><input id="inpAvailability" value="Freelance &amp; Open to Work">
-                    <label>Contact Form Endpoint (Formspree)</label><input id="inpFormAction" value="https://formspree.io/f/your-form-id">
-                    <label>GitHub URL</label><input id="inpGithub" value="#">
-                    <label>Discord URL</label><input id="inpDiscord" value="#">
-                    <label>Instagram URL</label><input id="inpInstagram" value="#">
-                    <label>LinkedIn URL</label><input id="inpLinkedin" value="#">
-                    <button class="btn-primary save-btn" id="savePersonal">Save Personal Info</button>
-                </div>
-                            <div class="admin-card">
-                    <h3><i class="fas fa-tools"></i> Skills</h3>
-                    <ul class="admin-list"><li>Web Development <button data-del-skill="0" class="delete-btn">Remove</button></li><li>App Development <button data-del-skill="1" class="delete-btn">Remove</button></li><li>Robotics <button data-del-skill="2" class="delete-btn">Remove</button></li><li>IOT <button data-del-skill="3" class="delete-btn">Remove</button></li><li>Photography <button data-del-skill="4" class="delete-btn">Remove</button></li><li>UI/UX Design <button data-del-skill="5" class="delete-btn">Remove</button></li></ul>
-                    <input id="newSkillIcon" placeholder="Icon (fas fa-code)"><input id="newSkillName" placeholder="Skill name">
-                    <button id="addSkill" class="btn-sm">Add Skill</button>
-                </div>
-                            <div class="admin-card">
-                    <h3><i class="fas fa-project-diagram"></i> Software &amp; Web</h3>
-                    <ul class="admin-list"><li>No projects</li></ul>
-                    <input id="newsoftwareTitle" placeholder="Title">
-                    <select id="newsoftwareType"><option value="image">Image</option><option value="video">Video</option></select>
-                    <input id="newsoftwareMedia" placeholder="Media path (e.g., images/pic.jpg or videos/demo.mp4)">
-                    <input id="newsoftwareTag" placeholder="Tag">
-                    <textarea id="newsoftwareDesc" placeholder="Description"></textarea>
-                    <button id="addsoftware" class="btn-sm">Add Project</button>
-                </div>
-                            <div class="admin-card">
-                    <h3><i class="fas fa-project-diagram"></i> IOT &amp; Robotics</h3>
-                    <ul class="admin-list"><li>Smart Home System <button data-del-iot="0" class="delete-btn">Remove</button></li></ul>
-                    <input id="newiotTitle" placeholder="Title">
-                    <select id="newiotType"><option value="image">Image</option><option value="video">Video</option></select>
-                    <input id="newiotMedia" placeholder="Media path (e.g., images/pic.jpg or videos/demo.mp4)">
-                    <input id="newiotTag" placeholder="Tag">
-                    <textarea id="newiotDesc" placeholder="Description"></textarea>
-                    <button id="addiot" class="btn-sm">Add Project</button>
-                </div>
-                            <div class="admin-card">
-                    <h3><i class="fas fa-camera"></i> Photos</h3>
-                    <ul class="admin-list"><li>me <button data-del-photo="0" class="delete-btn">Remove</button></li></ul>
-                    <input id="newPhotoUrl" placeholder="Image path"><input id="newPhotoCaption" placeholder="Caption">
-                    <button id="addPhoto" class="btn-sm">Add Photo</button>
-                </div>
-                            <div class="admin-card">
-                    <h3><i class="fas fa-puzzle-piece"></i> Custom Sections</h3>
-                    <ul class="admin-list"><li>No sections</li></ul>
-                    <input id="newSectionTitle" placeholder="Title"><textarea id="newSectionContent" placeholder="Content (HTML allowed)"></textarea>
-                    <input id="newSectionImage" placeholder="Image URL (optional)">
-                    <button id="addSection" class="btn-sm">Add Section</button>
-                </div>
-                        </div></div></div>
-
     <script>
-        (function() {
-            // Embedded data (can be pre-filled with your own content)
-            const EMBEDDED_DATA = {
-          "personal": {
-                    "name": "Pushpika",
-                    "heroBadge": "Creative Developer & Photographer",
-                    "heroSubtitle": "Software, IOT, and photography — crafting digital experiences.",
-                    "aboutText1": "Hey! I'm Pushpika — a multi-talented creator who loves building software, robotics projects, and capturing the world through my lens.",
-                    "aboutText2": "I believe in clean code, innovative hardware, and beautiful design.",
-                    "aboutImage": "image folder/pushpika.jpg",
-                    "email": "eapushpika@gmail.com.comgggggg",
-                    "location": "Available Worldwide",
-                    "availability": "Freelance & Open to Work",
-                    "contactFormAction": "https://formspree.io/f/your-form-id",
-                    "github": "#",
-                    "discord": "#",
-                    "instagram": "#",
-                    "linkedin": "#"
-          },
-          "skills": [
-                    {
-                              "icon": "fas fa-code",
-                              "name": "Web Development"
-                    },
-                    {
-                              "icon": "fas fa-mobile-alt",
-                              "name": "App Development"
-                    },
-                    {
-                              "icon": "fas fa-robot",
-                              "name": "Robotics"
-                    },
-                    {
-                              "icon": "fas fa-microchip",
-                              "name": "IOT"
-                    },
-                    {
-                              "icon": "fas fa-camera-retro",
-                              "name": "Photography"
-                    },
-                    {
-                              "icon": "fas fa-paint-brush",
-                              "name": "UI/UX Design"
-                    }
-          ],
-          "software": [],
-          "iot": [
-                    {
-                              "title": "Smart Home System",
-                              "media": "videos/demo.mp4",
-                              "type": "video",
-                              "tag": "IOT",
-                              "desc": "Home automation using ESP32 and MQTT."
-                    }
-          ],
-          "photos": [
-                    {
-                              "url": "image folder/pushpika.jpg",
-                              "caption": "me"
-                    }
-          ],
-          "customSections": []
-};
+        // ====================================================================
+        //   📸 PHOTOGRAPHY — Add your image paths here!
+        //   Use: "https://..." or "folder/image.jpg"
+        // ====================================================================
+        const photographyImages = [
+            { url: "https://picsum.photos/seed/photo1/800/600", caption: "Golden Hour" },
+            { url: "https://picsum.photos/seed/photo2/800/600", caption: "Urban Architecture" },
+            { url: "https://picsum.photos/seed/photo3/800/600", caption: "Mountain Sunrise" }
+            // ADD MORE PHOTOS BELOW:
+            // { url: "your-image-path.jpg", caption: "Your caption" },
+        ];
 
-            // Load from localStorage if exists, otherwise use embedded
-            let personal = localStorage.getItem('p_personal') ? JSON.parse(localStorage.getItem('p_personal')) : EMBEDDED_DATA.personal;
-            let skills = localStorage.getItem('p_skills') ? JSON.parse(localStorage.getItem('p_skills')) : EMBEDDED_DATA.skills;
-            let software = localStorage.getItem('p_software') ? JSON.parse(localStorage.getItem('p_software')) : EMBEDDED_DATA.software;
-            let iot = localStorage.getItem('p_iot') ? JSON.parse(localStorage.getItem('p_iot')) : EMBEDDED_DATA.iot;
-            let photos = localStorage.getItem('p_photos') ? JSON.parse(localStorage.getItem('p_photos')) : EMBEDDED_DATA.photos;
-            let customSections = localStorage.getItem('p_custom') ? JSON.parse(localStorage.getItem('p_custom')) : EMBEDDED_DATA.customSections;
+        // ====================================================================
+        //   💻 SOFTWARE & WEB PROJECTS
+        //   type: "image" or "video"
+        // ====================================================================
+        const softwareProjects = [
+            {
+                title: "E-Commerce Platform",
+                media: "https://picsum.photos/seed/sw1/600/400",
+                type: "image",
+                tag: "Web App",
+                desc: "Full-featured e-commerce with payment integration."
+            },
+            {
+                title: "Task Manager",
+                media: "https://picsum.photos/seed/sw2/600/400",
+                type: "image",
+                tag: "Mobile App",
+                desc: "Cross-platform task manager with real-time sync."
+            }
+        ];
 
-            // Save helpers
-            function save(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+        // ====================================================================
+        //   🤖 IOT & ROBOTICS PROJECTS
+        // ====================================================================
+        const iotProjects = [
+            {
+                title: "Smart Home System",
+                media: "videos/demo.mp4",  // example video file
+                type: "video",
+                tag: "IOT",
+                desc: "Home automation using ESP32 and MQTT."
+            },
+            {
+                title: "Robotic Arm",
+                media: "images/robot.jpg",  // example image file
+                type: "image",
+                tag: "Robotics",
+                desc: "6-DOF robotic arm controlled via Bluetooth."
+            }
+        ];
 
-            // Render functions
-            function renderHero() {
-                document.getElementById('heroContent').innerHTML = `
-                    <div class="hero-badge"><i class="fas fa-bolt"></i> ${personal.heroBadge}</div>
-                    <h1 class="hero-title">I'm <span class="highlight">${personal.name}</span><br>Building Digital<br>Experiences</h1>
-                    <p class="hero-subtitle">${personal.heroSubtitle}</p>
-                    <div class="hero-buttons">
-                        <a href="#software" class="btn btn-primary"><i class="fas fa-code"></i> Software & Web</a>
-                        <a href="#iot" class="btn btn-outline"><i class="fas fa-microchip"></i> IOT & Robotics</a>
-                    </div>`;
-            }
-            function renderAbout() {
-                const img = personal.aboutImage
-                    ? `<img src="${personal.aboutImage}" onerror="this.parentElement.innerHTML='<div class=\\'about-image-placeholder\\'><i class=\\'fas fa-user-astronaut\\'></i></div>'">`
-                    : '<div class="about-image-placeholder"><i class="fas fa-user-astronaut"></i></div>';
-                document.getElementById('aboutContainer').innerHTML = `
-                    <div class="about-image-wrapper">${img}</div>
-                    <div class="about-text">
-                        <span class="section-label">About Me</span>
-                        <h3>Passionate creator with an eye for <span class="accent">detail</span></h3>
-                        <p>${personal.aboutText1}</p>
-                        <p>${personal.aboutText2}</p>
-                        <div class="about-stats">
-                            <div class="stat-item"><div class="stat-number">${software.length + iot.length}+</div><div class="stat-label">Projects</div></div>
-                            <div class="stat-item"><div class="stat-number">${photos.length}+</div><div class="stat-label">Photos</div></div>
-                        </div>
-                    </div>`;
-            }
-            function renderProjects(gridId, items) {
-                const grid = document.getElementById(gridId);
-                grid.innerHTML = items.map(p => `
-                    <div class="project-card">
-                        ${p.type === 'video'
-                            ? `<video src="${p.media}" controls></video>`
-                            : `<img src="${p.media}" onerror="this.src='https://via.placeholder.com/600x400?text=Media+Not+Found'">`}
-                        <div class="project-card-body">
-                            <span class="project-card-tag">${p.tag}</span>
-                            <h3>${p.title}</h3>
-                            <p>${p.desc}</p>
-                        </div>
-                    </div>`).join('');
-            }
-            function renderPhotos() {
-                document.getElementById('photoGrid').innerHTML = photos.map((p,i) => `
-                    <div class="photo-item" data-index="${i}">
-                        <img src="${p.url}" onerror="this.src='https://via.placeholder.com/400x300?text=No+Image'">
-                        <div class="photo-overlay"><span>${p.caption}</span></div>
-                    </div>`).join('');
-            }
-            function renderSkills() {
-                document.getElementById('skillsGrid').innerHTML = skills.map(s => `
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="${s.icon}"></i></div>
-                        <div class="skill-name">${s.name}</div>
-                    </div>`).join('');
-            }
-            function renderCustomSections() {
-                document.getElementById('customSectionsContainer').innerHTML = customSections.map(s => `
-                    <div style="margin-bottom:3rem">
-                        <h2 class="section-title text-center">${s.title}</h2>
-                        <div style="color:#aaa;max-width:800px;margin:1rem auto;">${s.content}</div>
-                        ${s.image ? `<img src="${s.image}" style="max-width:100%;border-radius:12px;margin-top:1rem;">` : ''}
-                    </div>`).join('');
-            }
-            function renderFooterSocial() {
-                const s = document.getElementById('footerSocial');
-                s.innerHTML = `
-                    <a href="${personal.github}" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="${personal.discord}" target="_blank"><i class="fab fa-discord"></i></a>
-                    <a href="${personal.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="${personal.linkedin}" target="_blank"><i class="fab fa-linkedin-in"></i></a>`;
-            }
-            function renderContact() {
-                const endpoint = personal.contactFormAction || "https://formspree.io/f/your-form-id";
-                document.getElementById('contactContainer').innerHTML = `
-                    <div>
-                        <form class="contact-form" id="contactForm">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-                        </form>
-                        <div id="formStatus" style="display:none;margin-top:1rem;"></div>
+        // ====================================================================
+        //   🛠 SKILLS
+        // ====================================================================
+        const skills = [
+            { icon: "fas fa-code", name: "Web Development" },
+            { icon: "fas fa-mobile-alt", name: "App Development" },
+            { icon: "fas fa-robot", name: "Robotics" },
+            { icon: "fas fa-microchip", name: "IOT" },
+            { icon: "fas fa-camera-retro", name: "Photography" },
+            { icon: "fas fa-paint-brush", name: "UI/UX Design" }
+        ];
+
+        // ====================================================================
+        //   📨 CONTACT FORM — Replace with your Formspree endpoint
+        //   Get yours free at https://formspree.io
+        // ====================================================================
+        const FORMSpree_ENDPOINT = "https://formspree.io/f/your-form-id";
+
+        // ---------- RENDERING ----------
+        function renderPhotography() {
+            const grid = document.getElementById('photoGrid');
+            grid.innerHTML = photographyImages.map((p, i) => `
+                <div class="photo-item" data-index="${i}">
+                    <img src="${p.url}" alt="${p.caption}" onerror="this.style.opacity='0'">
+                    <div class="photo-overlay"><span>${p.caption}</span></div>
+                </div>
+            `).join('');
+            document.getElementById('statPhotos').textContent = photographyImages.length;
+        }
+
+        function renderProjects(gridId, projects) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = projects.map(p => `
+                <div class="project-card">
+                    ${p.type === 'video'
+                        ? `<video src="${p.media}" controls onerror="this.style.display='none'"></video>`
+                        : `<img src="${p.media}" alt="${p.title}" onerror="this.style.display='none'">`}
+                    <div class="project-card-body">
+                        <span class="project-card-tag">${p.tag}</span>
+                        <h3>${p.title}</h3>
+                        <p>${p.desc}</p>
                     </div>
-                    <div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
-                            <div><strong>Email</strong><br>${personal.email}</div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div><strong>Location</strong><br>${personal.location}</div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
-                            <div><strong>Availability</strong><br>${personal.availability}</div>
-                        </div>
-                    </div>`;
-                document.getElementById('contactForm').addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const form = e.target;
-                    const status = document.getElementById('formStatus');
-                    const formData = new FormData(form);
-                    if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
-                        status.style.display = 'block';
-                        status.innerHTML = '<p style="color:#f44;">Please fill all fields.</p>';
-                        return;
-                    }
-                    if (endpoint === 'https://formspree.io/f/your-form-id') {
-                        status.style.display = 'block';
-                        status.innerHTML = '<p style="color:#f44;">Set your Formspree endpoint in Admin Panel first.</p>';
-                        return;
-                    }
-                    try {
-                        const res = await fetch(endpoint, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
-                        if (res.ok) {
-                            status.style.display = 'block';
-                            status.innerHTML = '<p style="color:#0c6;">Message sent successfully!</p>';
-                            form.reset();
-                        } else { throw new Error(); }
-                    } catch {
-                        status.style.display = 'block';
-                        status.innerHTML = '<p style="color:#f44;">Something went wrong. Try again.</p>';
-                    }
-                    setTimeout(() => status.style.display = 'none', 4000);
+                </div>
+            `).join('');
+        }
+
+        function renderSkills() {
+            document.getElementById('skillsGrid').innerHTML = skills.map(s => `
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="${s.icon}"></i></div>
+                    <div class="skill-name">${s.name}</div>
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            document.getElementById('statProjects').textContent = softwareProjects.length + iotProjects.length;
+        }
+
+        // Initial render
+        renderPhotography();
+        renderProjects('softwareGrid', softwareProjects);
+        renderProjects('iotGrid', iotProjects);
+        renderSkills();
+        updateStats();
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+        // ---------- LIGHTBOX ----------
+        let currentPhotoIdx = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(index) {
+            currentPhotoIdx = index;
+            lightboxImg.src = photographyImages[currentPhotoIdx].url;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+
+        document.getElementById('photoGrid').addEventListener('click', (e) => {
+            const item = e.target.closest('.photo-item');
+            if (!item) return;
+            openLightbox(parseInt(item.dataset.index, 10));
+        });
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        // click outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.getElementById('lightboxPrev').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentPhotoIdx = (currentPhotoIdx - 1 + photographyImages.length) % photographyImages.length;
+            lightboxImg.src = photographyImages[currentPhotoIdx].url;
+        });
+
+        document.getElementById('lightboxNext').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentPhotoIdx = (currentPhotoIdx + 1) % photographyImages.length;
+            lightboxImg.src = photographyImages[currentPhotoIdx].url;
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+            if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+        });
+
+        // ---------- CONTACT FORM ----------
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const status = document.getElementById('formStatus');
+            const formData = new FormData(this);
+
+            if (FORMSpree_ENDPOINT === "https://formspree.io/f/your-form-id") {
+                status.innerHTML = '<span style="color:#f44;">🔴 Set your Formspree endpoint in the JS code.</span>';
+                return;
+            }
+            try {
+                const response = await fetch(FORMSpree_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
                 });
-            }
-
-            function refreshAll() {
-                renderHero(); renderAbout();
-                renderProjects('softwareGrid', software);
-                renderProjects('iotGrid', iot);
-                renderPhotos(); renderSkills(); renderCustomSections();
-                renderFooterSocial(); renderContact();
-            }
-            refreshAll();
-            document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-            // Lightbox
-            let currentPhotoIdx = 0;
-            document.getElementById('photoGrid').addEventListener('click', (e) => {
-                const item = e.target.closest('.photo-item');
-                if (!item) return;
-                currentPhotoIdx = parseInt(item.dataset.index);
-                document.getElementById('lightboxImg').src = photos[currentPhotoIdx].url;
-                document.getElementById('lightbox').style.display = 'flex';
-            });
-            document.getElementById('lightboxClose').addEventListener('click', () => document.getElementById('lightbox').style.display = 'none');
-            document.getElementById('lightboxPrev').addEventListener('click', () => {
-                currentPhotoIdx = (currentPhotoIdx - 1 + photos.length) % photos.length;
-                document.getElementById('lightboxImg').src = photos[currentPhotoIdx].url;
-            });
-            document.getElementById('lightboxNext').addEventListener('click', () => {
-                currentPhotoIdx = (currentPhotoIdx + 1) % photos.length;
-                document.getElementById('lightboxImg').src = photos[currentPhotoIdx].url;
-            });
-
-            // ========== ADMIN PANEL ==========
-            const adminOverlay = document.getElementById('adminOverlay');
-            const adminPanel = document.getElementById('adminPanel');
-            let loggedIn = false;
-
-            document.getElementById('adminTrigger').addEventListener('click', () => {
-                adminOverlay.classList.add('active');
-                renderAdmin();
-            });
-            function closeAdmin() { adminOverlay.classList.remove('active'); }
-
-            function downloadUpdatedSite() {
-                // Build the HTML with current data embedded in EMBEDDED_DATA
-                const updatedData = { personal, skills, software, iot, photos, customSections };
-                const currentHTML = document.documentElement.outerHTML;
-                // Replace the EMBEDDED_DATA object
-                const newHTML = currentHTML.replace(
-                    /const EMBEDDED_DATA = \{[\s\S]*?\};/,
-                    `const EMBEDDED_DATA = ${JSON.stringify(updatedData, null, 12)};`
-                );
-                const blob = new Blob([newHTML], { type: 'text/html' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'index.html';
-                a.click();
-                URL.revokeObjectURL(url);
-            }
-
-            function renderAdmin() {
-                if (!loggedIn) {
-                    adminPanel.innerHTML = `
-                        <button class="admin-close"><i class="fas fa-times"></i></button>
-                        <h2><i class="fas fa-lock"></i> Admin Login</h2>
-                        <div style="max-width:300px;margin:2rem auto;">
-                            <input type="text" id="adminUser" placeholder="Username"><br>
-                            <input type="password" id="adminPass" placeholder="Password"><br>
-                            <p id="loginError" style="color:#f44;display:none;">Invalid credentials</p>
-                            <button class="btn btn-primary" id="loginBtn">Login</button>
-                        </div>`;
-                    adminPanel.querySelector('.admin-close').addEventListener('click', closeAdmin);
-                    document.getElementById('loginBtn').addEventListener('click', () => {
-                        if (document.getElementById('adminUser').value === 'admin' &&
-                            document.getElementById('adminPass').value === 'pushpika2024') {
-                            loggedIn = true;
-                            renderAdmin();
-                        } else {
-                            document.getElementById('loginError').style.display = 'block';
-                        }
-                    });
+                if (response.ok) {
+                    status.innerHTML = '<span style="color:#0c6;">✅ Message sent!</span>';
+                    this.reset();
                 } else {
-                    // Admin dashboard with Download button
-                    adminPanel.innerHTML = `
-                        <button class="admin-close"><i class="fas fa-times"></i></button>
-                        <button id="logoutBtn" style="position:absolute;top:1rem;right:4rem;background:none;border:1px solid #2a2a2a;color:#aaa;padding:0.3rem 1rem;border-radius:20px;cursor:pointer;">Logout</button>
-                        <h2><i class="fas fa-sliders-h"></i> Manage Your Site</h2>
-                        <button id="downloadBtn" class="btn btn-download"><i class="fas fa-download"></i> Download Updated Site</button>
-                        <p style="font-size:0.8rem;color:#888;margin-top:0.5rem;">After editing, click this button and replace your old index.html on GitHub.</p>
-                        <div class="admin-cards">
-                            ${personalCard()}
-                            ${skillsCard()}
-                            ${softwareCard()}
-                            ${iotCard()}
-                            ${photosCard()}
-                            ${customSectionCard()}
-                        </div>`;
-                    adminPanel.querySelector('.admin-close').addEventListener('click', closeAdmin);
-                    document.getElementById('logoutBtn').addEventListener('click', () => { loggedIn = false; renderAdmin(); });
-                    document.getElementById('downloadBtn').addEventListener('click', downloadUpdatedSite);
-                    attachAdminEvents();
+                    throw new Error();
                 }
+            } catch (error) {
+                status.innerHTML = '<span style="color:#f44;">❌ Something went wrong. Try again later.</span>';
             }
+            setTimeout(() => status.innerHTML = '', 4000);
+        });
 
-            function personalCard() {
-                return `<div class="admin-card">
-                    <h3><i class="fas fa-user"></i> Personal Info</h3>
-                    <label>Name</label><input id="inpName" value="${personal.name}">
-                    <label>Hero Badge</label><input id="inpBadge" value="${personal.heroBadge}">
-                    <label>Hero Subtitle</label><input id="inpSubtitle" value="${personal.heroSubtitle}">
-                    <label>About Text 1</label><textarea id="inpAbout1">${personal.aboutText1}</textarea>
-                    <label>About Text 2</label><textarea id="inpAbout2">${personal.aboutText2}</textarea>
-                    <label>About Image (URL)</label><input id="inpAboutImage" value="${personal.aboutImage||''}">
-                    <label>Email</label><input id="inpEmail" value="${personal.email}">
-                    <label>Location</label><input id="inpLocation" value="${personal.location}">
-                    <label>Availability</label><input id="inpAvailability" value="${personal.availability}">
-                    <label>Contact Form Endpoint (Formspree)</label><input id="inpFormAction" value="${personal.contactFormAction}">
-                    <label>GitHub URL</label><input id="inpGithub" value="${personal.github}">
-                    <label>Discord URL</label><input id="inpDiscord" value="${personal.discord}">
-                    <label>Instagram URL</label><input id="inpInstagram" value="${personal.instagram}">
-                    <label>LinkedIn URL</label><input id="inpLinkedin" value="${personal.linkedin}">
-                    <button class="btn-primary save-btn" id="savePersonal">Save Personal Info</button>
-                </div>`;
-            }
-            function skillsCard() {
-                let list = skills.map((s,i) => `<li>${s.name} <button data-del-skill="${i}" class="delete-btn">Remove</button></li>`).join('');
-                return `<div class="admin-card">
-                    <h3><i class="fas fa-tools"></i> Skills</h3>
-                    <ul class="admin-list">${list || '<li>No skills</li>'}</ul>
-                    <input id="newSkillIcon" placeholder="Icon (fas fa-code)"><input id="newSkillName" placeholder="Skill name">
-                    <button id="addSkill" class="btn-sm">Add Skill</button>
-                </div>`;
-            }
-            function softwareCard() {
-                return projectCardTemplate('software', software, 'Software & Web');
-            }
-            function iotCard() {
-                return projectCardTemplate('iot', iot, 'IOT & Robotics');
-            }
-            function projectCardTemplate(key, items, title) {
-                let list = items.map((p,i) => `<li>${p.title} <button data-del-${key}="${i}" class="delete-btn">Remove</button></li>`).join('');
-                return `<div class="admin-card">
-                    <h3><i class="fas fa-project-diagram"></i> ${title}</h3>
-                    <ul class="admin-list">${list || '<li>No projects</li>'}</ul>
-                    <input id="new${key}Title" placeholder="Title">
-                    <select id="new${key}Type"><option value="image">Image</option><option value="video">Video</option></select>
-                    <input id="new${key}Media" placeholder="Media path (e.g., images/pic.jpg or videos/demo.mp4)">
-                    <input id="new${key}Tag" placeholder="Tag">
-                    <textarea id="new${key}Desc" placeholder="Description"></textarea>
-                    <button id="add${key}" class="btn-sm">Add Project</button>
-                </div>`;
-            }
-            function photosCard() {
-                let list = photos.map((p,i) => `<li>${p.caption} <button data-del-photo="${i}" class="delete-btn">Remove</button></li>`).join('');
-                return `<div class="admin-card">
-                    <h3><i class="fas fa-camera"></i> Photos</h3>
-                    <ul class="admin-list">${list || '<li>No photos</li>'}</ul>
-                    <input id="newPhotoUrl" placeholder="Image path"><input id="newPhotoCaption" placeholder="Caption">
-                    <button id="addPhoto" class="btn-sm">Add Photo</button>
-                </div>`;
-            }
-            function customSectionCard() {
-                let list = customSections.map((s,i) => `<li>${s.title} <button data-del-custom="${i}" class="delete-btn">Remove</button></li>`).join('');
-                return `<div class="admin-card">
-                    <h3><i class="fas fa-puzzle-piece"></i> Custom Sections</h3>
-                    <ul class="admin-list">${list || '<li>No sections</li>'}</ul>
-                    <input id="newSectionTitle" placeholder="Title"><textarea id="newSectionContent" placeholder="Content (HTML allowed)"></textarea>
-                    <input id="newSectionImage" placeholder="Image URL (optional)">
-                    <button id="addSection" class="btn-sm">Add Section</button>
-                </div>`;
-            }
+        // ---------- NAVBAR SCROLL ----------
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
 
-            function attachAdminEvents() {
-                document.getElementById('savePersonal').addEventListener('click', () => {
-                    personal.name = document.getElementById('inpName').value;
-                    personal.heroBadge = document.getElementById('inpBadge').value;
-                    personal.heroSubtitle = document.getElementById('inpSubtitle').value;
-                    personal.aboutText1 = document.getElementById('inpAbout1').value;
-                    personal.aboutText2 = document.getElementById('inpAbout2').value;
-                    personal.aboutImage = document.getElementById('inpAboutImage').value;
-                    personal.email = document.getElementById('inpEmail').value;
-                    personal.location = document.getElementById('inpLocation').value;
-                    personal.availability = document.getElementById('inpAvailability').value;
-                    personal.contactFormAction = document.getElementById('inpFormAction').value;
-                    personal.github = document.getElementById('inpGithub').value;
-                    personal.discord = document.getElementById('inpDiscord').value;
-                    personal.instagram = document.getElementById('inpInstagram').value;
-                    personal.linkedin = document.getElementById('inpLinkedin').value;
-                    save('p_personal', personal);
-                    refreshAll();
-                    alert('Personal info saved!');
-                });
-                // Add/delete skill
-                document.getElementById('addSkill').addEventListener('click', () => {
-                    const icon = document.getElementById('newSkillIcon').value.trim();
-                    const name = document.getElementById('newSkillName').value.trim();
-                    if (icon && name) {
-                        skills.push({icon, name});
-                        save('p_skills', skills);
-                        refreshAll();
-                        renderAdmin();
-                    }
-                });
-                document.querySelectorAll('[data-del-skill]').forEach(b => b.addEventListener('click', (e) => {
-                    skills.splice(e.target.dataset.delSkill, 1);
-                    save('p_skills', skills);
-                    refreshAll();
-                    renderAdmin();
-                }));
-                // Add/delete for software, iot, photos, custom sections
-                function addProject(key, itemsArray) {
-                    const title = document.getElementById(`new${key}Title`).value.trim();
-                    const type = document.getElementById(`new${key}Type`).value;
-                    const media = document.getElementById(`new${key}Media`).value.trim();
-                    const tag = document.getElementById(`new${key}Tag`).value.trim();
-                    const desc = document.getElementById(`new${key}Desc`).value.trim();
-                    if (title && media && tag && desc) {
-                        itemsArray.push({title, media, type, tag, desc});
-                        save(`p_${key}`, itemsArray);
-                        refreshAll();
-                        renderAdmin();
-                    }
-                }
-                document.getElementById('addsoftware').addEventListener('click', () => addProject('software', software));
-                document.getElementById('addiot').addEventListener('click', () => addProject('iot', iot));
-                document.querySelectorAll('[data-del-software]').forEach(b => b.addEventListener('click', (e) => {
-                    software.splice(e.target.dataset.delSoftware, 1);
-                    save('p_software', software);
-                    refreshAll(); renderAdmin();
-                }));
-                document.querySelectorAll('[data-del-iot]').forEach(b => b.addEventListener('click', (e) => {
-                    iot.splice(e.target.dataset.delIot, 1);
-                    save('p_iot', iot);
-                    refreshAll(); renderAdmin();
-                }));
-                document.getElementById('addPhoto').addEventListener('click', () => {
-                    const url = document.getElementById('newPhotoUrl').value.trim();
-                    const caption = document.getElementById('newPhotoCaption').value.trim();
-                    if (url && caption) {
-                        photos.push({url, caption});
-                        save('p_photos', photos);
-                        refreshAll();
-                        renderAdmin();
-                    }
-                });
-                document.querySelectorAll('[data-del-photo]').forEach(b => b.addEventListener('click', (e) => {
-                    photos.splice(e.target.dataset.delPhoto, 1);
-                    save('p_photos', photos);
-                    refreshAll(); renderAdmin();
-                }));
-                document.getElementById('addSection').addEventListener('click', () => {
-                    const title = document.getElementById('newSectionTitle').value.trim();
-                    const content = document.getElementById('newSectionContent').value.trim();
-                    const image = document.getElementById('newSectionImage').value.trim();
-                    if (title && content) {
-                        customSections.push({title, content, image});
-                        save('p_custom', customSections);
-                        refreshAll();
-                        renderAdmin();
-                    }
-                });
-                document.querySelectorAll('[data-del-custom]').forEach(b => b.addEventListener('click', (e) => {
-                    customSections.splice(e.target.dataset.delCustom, 1);
-                    save('p_custom', customSections);
-                    refreshAll(); renderAdmin();
-                }));
-            }
-
-            // Hamburger menu
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+        // ---------- MOBILE MENU ----------
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        // close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
             });
-        })();
+        });
     </script>
-
-
-</body></html>
+</body>
+</html>
