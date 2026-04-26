@@ -15,18 +15,30 @@
 
     <style>
         :root {
-            --black: #000000; --deep-black: #050505; --dark-bg: #0a0a0a;
-            --card-bg: #111111; --border: #1e1e1e; --border-light: #2a2a2a;
-            --white: #ffffff; --off-white: #e0e0e0; --gray: #888888; --gray-light: #aaaaaa;
-            --electric-blue: #0066ff; --electric-blue-light: #3388ff;
-            --electric-blue-glow: #0066ff66; --gradient-blue: linear-gradient(135deg, #0066ff, #00aaff);
+            --black: #000000;
+            --deep-black: #050505;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --border: #1e1e1e;
+            --border-light: #2a2a2a;
+            --white: #ffffff;
+            --off-white: #e0e0e0;
+            --gray: #888888;
+            --gray-light: #aaaaaa;
+            --electric-blue: #0066ff;
+            --electric-blue-light: #3388ff;
+            --electric-blue-glow: #0066ff66;
+            --gradient-blue: linear-gradient(135deg, #0066ff, #00aaff);
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; font-size: 16px; }
         body {
-            font-family: 'Inter', sans-serif; background-color: var(--black);
-            color: var(--white); line-height: 1.6; overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         .bg-pattern {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -35,7 +47,7 @@
             background-size: 40px 40px;
         }
 
-        /* navbar */
+        /* Navbar */
         .navbar {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
             padding: 1.2rem 2rem; transition: var(--transition); background: transparent;
@@ -54,15 +66,16 @@
         }
         .nav-logo span { color: var(--electric-blue); font-weight: 800; }
         .nav-logo .dot {
-            display: inline-block; width: 8px; height: 8px; background: var(--electric-blue);
-            border-radius: 50%; margin-left: 2px; animation: pulse-dot 2s infinite;
+            display: inline-block; width: 8px; height: 8px;
+            background: var(--electric-blue); border-radius: 50%;
+            margin-left: 2px; animation: pulse-dot 2s infinite;
             box-shadow: 0 0 30px rgba(0,102,255,0.3);
         }
         @keyframes pulse-dot {
             0%,100% { box-shadow: 0 0 0 0 rgba(0,102,255,0.7); }
             50% { box-shadow: 0 0 0 14px rgba(0,102,255,0); }
         }
-        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a {
             color: var(--off-white); text-decoration: none; font-size: 0.95rem;
             font-weight: 500; transition: var(--transition); position: relative; padding: 4px 0;
@@ -80,10 +93,10 @@
             padding: 0.6rem 1.4rem !important; border-radius: 50px; font-weight: 600 !important;
         }
         .nav-cta::after { display: none !important; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1001; }
-        .hamburger span { width: 28px; height: 2.5px; background: var(--white); border-radius: 4px; transition: var(--transition); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 6px; }
+        .hamburger span { width: 28px; height: 2.5px; background: var(--white); border-radius: 4px; }
 
-        /* hero */
+        /* Hero */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             position: relative; padding: 2rem; z-index: 1; overflow: hidden;
@@ -106,8 +119,8 @@
         }
         .hero-badge i { color: var(--electric-blue); margin-right: 6px; }
         .hero-title {
-            font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 7vw, 4.5rem);
-            font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800;
+            line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.5rem;
         }
         .hero-title .highlight {
             background: var(--gradient-blue); -webkit-background-clip: text;
@@ -133,9 +146,8 @@
         }
         .section-title .accent { color: var(--electric-blue-light); }
 
-        /* about */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-        .about-image-wrapper img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 20px; }
+        .about-image-wrapper img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 20px; border: 1px solid var(--border); }
         .about-image-placeholder {
             width: 100%; aspect-ratio: 1; border-radius: 20px; background: var(--card-bg);
             display: flex; align-items: center; justify-content: center; font-size: 6rem; color: var(--electric-blue);
@@ -143,7 +155,6 @@
         .about-stats { display: flex; gap: 2rem; margin-top: 1.5rem; }
         .stat-number { font-family: 'Poppins', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--electric-blue-light); }
 
-        /* projects */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
         .project-card {
             background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
@@ -157,18 +168,16 @@
             border-radius: 50px; background: rgba(0,102,255,0.15); color: var(--electric-blue-light);
         }
 
-        /* photography */
         .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; }
         .photo-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
         .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
         .photo-item:hover img { transform: scale(1.06); }
         .photo-overlay {
             position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 50%);
-            opacity: 0; display: flex; align-items: flex-end; padding: 1.2rem; transition: 0.3s;
+            opacity: 0; display: flex; align-items: flex-end; padding: 1.2rem;
         }
         .photo-item:hover .photo-overlay { opacity: 1; }
 
-        /* skills */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.5rem; }
         .skill-card {
             background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px;
@@ -176,7 +185,6 @@
         }
         .skill-icon { font-size: 2.5rem; color: var(--electric-blue-light); margin-bottom: 1rem; }
 
-        /* contact */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
         .contact-form input, .contact-form textarea {
             width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--border);
@@ -187,11 +195,11 @@
             background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1rem;
         }
         .contact-info-icon {
-            width: 50px; height: 50px; border-radius: 50%; background: rgba(0,102,255,0.15);
-            display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--electric-blue-light);
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(0,102,255,0.15); display: flex; align-items: center;
+            justify-content: center; font-size: 1.3rem; color: var(--electric-blue-light);
         }
 
-        /* footer */
         footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--border); }
         .footer-links a { color: var(--gray); margin: 0 1rem; text-decoration: none; }
         .footer-social a {
@@ -201,7 +209,7 @@
         }
         .footer-social a:hover { border-color: var(--electric-blue); color: var(--electric-blue-light); }
 
-        /* lightbox */
+        /* Lightbox */
         .lightbox {
             position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999;
             display: none; align-items: center; justify-content: center;
@@ -215,11 +223,7 @@
 
         @media (max-width: 768px) {
             .hamburger { display: flex; }
-            .nav-links {
-                display: none; flex-direction: column; position: absolute; top: 100%;
-                right: 0; background: rgba(0,0,0,0.95); padding: 1.5rem; border-radius: 10px;
-                border: 1px solid #2a2a2a; min-width: 200px;
-            }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.95); padding: 1rem; border-radius: 10px; }
             .nav-links.active { display: flex; }
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
@@ -252,7 +256,9 @@
     <section class="hero" id="home">
         <div class="hero-glow"></div><div class="hero-glow-2"></div>
         <div class="hero-content">
-            <!-- [EDIT HERE] Change hero badge, title, subtitle -->
+            <!--
+                [EDIT] Hero badge, title, subtitle
+            -->
             <div class="hero-badge"><i class="fas fa-bolt"></i> Creative Developer & Photographer</div>
             <h1 class="hero-title">I'm <span class="highlight">Pushpika</span><br>Building Digital<br>Experiences</h1>
             <p class="hero-subtitle">Software, IOT, and photography — crafting digital experiences.</p>
@@ -268,16 +274,24 @@
         <div class="section-container about-grid">
             <div class="about-image-wrapper">
                 <!--
-                    [EDIT HERE] About image – replace with your own path.
-                    e.g., <img src="images/about.jpg" alt="About me">
+                    ==============================================
+                    [EDIT HERE] About image – paste your image path
+                    e.g., images/about.jpg  or  https://example.com/me.jpg
+                    ==============================================
                 -->
+                <!-- CURRENT: placeholder icon (remove this and use the img tag below) -->
+                <!--
                 <div class="about-image-placeholder"><i class="fas fa-user-astronaut"></i></div>
-                <img src="images folder/pushpika.jpg" alt="About me">
+                -->
+                <!-- UNCOMMENT and change src to your image -->
+                <img src="image folder/pushpika.jpg" alt="About me" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:20px;">
             </div>
             <div class="about-text">
                 <span class="section-label">About Me</span>
                 <h3>Passionate creator with an eye for <span class="accent">detail</span></h3>
-                <!-- [EDIT HERE] Change about paragraphs -->
+                <!--
+                    [EDIT] About text
+                -->
                 <p>Hey! I'm Pushpika — a multi‑talented creator who loves building software, robotics projects, and capturing the world through my lens.</p>
                 <p>I believe in clean code, innovative hardware, and beautiful design.</p>
                 <div class="about-stats">
@@ -288,7 +302,7 @@
         </div>
     </section>
 
-    <!-- ========== SOFTWARE & WEB ========== -->
+    <!-- ========== SOFTWARE & WEB SITES ========== -->
     <section id="software">
         <div class="section-container">
             <h2 class="section-title"><i class="fas fa-laptop-code"></i> Software & <span class="accent">Web Sites</span></h2>
@@ -333,7 +347,9 @@
                 <p id="formStatus" style="margin-top:1rem;"></p>
             </div>
             <div>
-                <!-- [EDIT HERE] Your contact info -->
+                <!--
+                    [EDIT] Contact info
+                -->
                 <div class="contact-info-item">
                     <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
                     <div><strong>Email</strong><br>pushpika@example.com</div>
@@ -357,7 +373,9 @@
             <a href="#iot">IOT</a><a href="#photography">Photos</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
         </div>
         <div class="footer-social">
-            <!-- [EDIT HERE] Change social media links -->
+            <!--
+                [EDIT] Social media links
+            -->
             <a href="#" target="_blank"><i class="fab fa-github"></i></a>
             <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
             <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -375,62 +393,63 @@
     </div>
 
     <script>
-        // ====================================================================
-        //   📸 PHOTOGRAPHY — Add your image paths here!
-        //   Use: "https://..." or "folder/image.jpg"
-        // ====================================================================
+        // ================================================================
+        //  📸 PHOTOGRAPHY IMAGES – Add your image paths here!
+        //  Format: { url: "your-path.jpg", caption: "Your caption" }
+        // ================================================================
         const photographyImages = [
             { url: "https://picsum.photos/seed/photo1/800/600", caption: "Golden Hour" },
             { url: "https://picsum.photos/seed/photo2/800/600", caption: "Urban Architecture" },
             { url: "https://picsum.photos/seed/photo3/800/600", caption: "Mountain Sunrise" }
-            // ADD MORE PHOTOS BELOW:
-            // { url: "your-image-path.jpg", caption: "Your caption" },
+            // [EDIT] Add more photos here
         ];
 
-        // ====================================================================
-        //   💻 SOFTWARE & WEB PROJECTS
-        //   type: "image" or "video"
-        // ====================================================================
+        // ================================================================
+        //  💻 SOFTWARE & WEB PROJECTS
+        //  type: "image" or "video", media: path to image/video
+        // ================================================================
         const softwareProjects = [
             {
                 title: "E-Commerce Platform",
-                media: "https://picsum.photos/seed/sw1/600/400",
+                media: "https://picsum.photos/seed/sw1/600/400",  // [EDIT] Your image/video path
                 type: "image",
                 tag: "Web App",
                 desc: "Full-featured e-commerce with payment integration."
             },
             {
                 title: "Task Manager",
-                media: "https://picsum.photos/seed/sw2/600/400",
+                media: "https://picsum.photos/seed/sw2/600/400", // [EDIT]
                 type: "image",
                 tag: "Mobile App",
                 desc: "Cross-platform task manager with real-time sync."
             }
+            // [EDIT] Add more projects here
         ];
 
-        // ====================================================================
-        //   🤖 IOT & ROBOTICS PROJECTS
-        // ====================================================================
+        // ================================================================
+        //  🤖 IOT & ROBOTICS PROJECTS
+        // ================================================================
         const iotProjects = [
             {
                 title: "Smart Home System",
-                media: "videos/demo.mp4",  // example video file
+                media: "videos/demo.mp4",  // [EDIT] Your video path (relative or full URL)
                 type: "video",
                 tag: "IOT",
                 desc: "Home automation using ESP32 and MQTT."
             },
             {
                 title: "Robotic Arm",
-                media: "images/robot.jpg",  // example image file
+                media: "images/robot.jpg", // [EDIT] Your image path
                 type: "image",
                 tag: "Robotics",
                 desc: "6-DOF robotic arm controlled via Bluetooth."
             }
+            // [EDIT] Add more projects
         ];
 
-        // ====================================================================
-        //   🛠 SKILLS
-        // ====================================================================
+        // ================================================================
+        //  🛠 SKILLS
+        // ================================================================
         const skills = [
             { icon: "fas fa-code", name: "Web Development" },
             { icon: "fas fa-mobile-alt", name: "App Development" },
@@ -438,20 +457,20 @@
             { icon: "fas fa-microchip", name: "IOT" },
             { icon: "fas fa-camera-retro", name: "Photography" },
             { icon: "fas fa-paint-brush", name: "UI/UX Design" }
+            // [EDIT] Add/remove skills
         ];
 
-        // ====================================================================
-        //   📨 CONTACT FORM — Replace with your Formspree endpoint
-        //   Get yours free at https://formspree.io
-        // ====================================================================
-        const FORMSpree_ENDPOINT = "https://formspree.io/f/your-form-id";
+        // ================================================================
+        //  📨 Formspree endpoint (sign up at https://formspree.io)
+        // ================================================================
+        const FORMSpree_ENDPOINT = "https://formspree.io/f/your-form-id"; // [EDIT] Your endpoint
 
-        // ---------- RENDERING ----------
+        // ========== RENDERING ==========
         function renderPhotography() {
             const grid = document.getElementById('photoGrid');
             grid.innerHTML = photographyImages.map((p, i) => `
                 <div class="photo-item" data-index="${i}">
-                    <img src="${p.url}" alt="${p.caption}" onerror="this.style.opacity='0'">
+                    <img src="${p.url}" alt="${p.caption}" onerror="this.style.display='none'">
                     <div class="photo-overlay"><span>${p.caption}</span></div>
                 </div>
             `).join('');
@@ -462,8 +481,8 @@
             const grid = document.getElementById(gridId);
             grid.innerHTML = projects.map(p => `
                 <div class="project-card">
-                    ${p.type === 'video'
-                        ? `<video src="${p.media}" controls onerror="this.style.display='none'"></video>`
+                    ${p.type === 'video' 
+                        ? `<video src="${p.media}" controls></video>` 
                         : `<img src="${p.media}" alt="${p.title}" onerror="this.style.display='none'">`}
                     <div class="project-card-body">
                         <span class="project-card-tag">${p.tag}</span>
@@ -475,7 +494,8 @@
         }
 
         function renderSkills() {
-            document.getElementById('skillsGrid').innerHTML = skills.map(s => `
+            const grid = document.getElementById('skillsGrid');
+            grid.innerHTML = skills.map(s => `
                 <div class="skill-card">
                     <div class="skill-icon"><i class="${s.icon}"></i></div>
                     <div class="skill-name">${s.name}</div>
@@ -493,56 +513,33 @@
         renderProjects('iotGrid', iotProjects);
         renderSkills();
         updateStats();
+
+        // Footer year
         document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-        // ---------- LIGHTBOX ----------
+        // ========== LIGHTBOX ==========
         let currentPhotoIdx = 0;
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
 
-        function openLightbox(index) {
-            currentPhotoIdx = index;
-            lightboxImg.src = photographyImages[currentPhotoIdx].url;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-        }
-
         document.getElementById('photoGrid').addEventListener('click', (e) => {
             const item = e.target.closest('.photo-item');
             if (!item) return;
-            openLightbox(parseInt(item.dataset.index, 10));
+            currentPhotoIdx = parseInt(item.dataset.index);
+            lightboxImg.src = photographyImages[currentPhotoIdx].url;
+            lightbox.classList.add('active');
         });
-
-        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-        // click outside the image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-
-        document.getElementById('lightboxPrev').addEventListener('click', (e) => {
-            e.stopPropagation();
+        document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('active'));
+        document.getElementById('lightboxPrev').addEventListener('click', () => {
             currentPhotoIdx = (currentPhotoIdx - 1 + photographyImages.length) % photographyImages.length;
             lightboxImg.src = photographyImages[currentPhotoIdx].url;
         });
-
-        document.getElementById('lightboxNext').addEventListener('click', (e) => {
-            e.stopPropagation();
+        document.getElementById('lightboxNext').addEventListener('click', () => {
             currentPhotoIdx = (currentPhotoIdx + 1) % photographyImages.length;
             lightboxImg.src = photographyImages[currentPhotoIdx].url;
         });
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
-            if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
-        });
-
-        // ---------- CONTACT FORM ----------
+        // ========== CONTACT FORM ==========
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const status = document.getElementById('formStatus');
@@ -570,22 +567,14 @@
             setTimeout(() => status.innerHTML = '', 4000);
         });
 
-        // ---------- NAVBAR SCROLL ----------
+        // ========== NAVBAR SCROLL EFFECT ==========
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // ---------- MOBILE MENU ----------
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        // close menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+        // ========== MOBILE MENU ==========
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
         });
     </script>
 </body>
